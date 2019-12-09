@@ -2,11 +2,14 @@ package com.mystartup.conceptjava.modal.usermgmt;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -30,6 +33,10 @@ public class UserMaster implements Serializable {
 	private String email;
 	@Temporal(TemporalType.DATE)
 	private Date updatedOn;
+	
+	@ManyToMany
+	private Set<RoleMaster> roleMaster;
+	
 	public int getId() {
 		return id;
 	}
@@ -65,6 +72,18 @@ public class UserMaster implements Serializable {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public Date getUpdatedOn() {
+		return updatedOn;
+	}
+	public void setUpdatedOn(Date updatedOn) {
+		this.updatedOn = updatedOn;
+	}
+	public Set<RoleMaster> getRoleMaster() {
+		return roleMaster;
+	}
+	public void setRoleMaster(Set<RoleMaster> roleMaster) {
+		this.roleMaster = roleMaster;
 	}
 	
 	
