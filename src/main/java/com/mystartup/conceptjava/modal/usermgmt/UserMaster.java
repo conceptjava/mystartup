@@ -1,15 +1,19 @@
 package com.mystartup.conceptjava.modal.usermgmt;
 
 import java.io.Serializable;
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="usermaster")
-public class UserManagement implements Serializable {
+public class UserMaster implements Serializable {
 	
 	/**
 	 * 
@@ -24,6 +28,8 @@ public class UserManagement implements Serializable {
 	private String fullName;
 	private String mobileNo;
 	private String email;
+	@Temporal(TemporalType.DATE)
+	private Date updatedOn;
 	public int getId() {
 		return id;
 	}
