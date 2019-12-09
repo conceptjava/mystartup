@@ -22,11 +22,9 @@ public class RoleMaster implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
 	private String roleName;
 	private String roleDescription;
 	@Temporal(TemporalType.DATE)
